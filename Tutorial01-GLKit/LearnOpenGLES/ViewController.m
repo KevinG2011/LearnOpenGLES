@@ -61,7 +61,8 @@
 - (void)uploadTexture {
     //纹理贴图
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"for_test" ofType:@"jpg"];
-    NSDictionary* options = [NSDictionary dictionaryWithObjectsAndKeys:@(1), GLKTextureLoaderOriginBottomLeft, nil];//GLKTextureLoaderOriginBottomLeft 纹理坐标系是相反的
+    //GLKTextureLoaderOriginBottomLeft 纹理坐标系是相反的
+    NSDictionary* options = @{GLKTextureLoaderOriginBottomLeft: @(1)};
     GLKTextureInfo* textureInfo = [GLKTextureLoader textureWithContentsOfFile:filePath options:options error:nil];
     //着色器
     self.mEffect = [[GLKBaseEffect alloc] init];

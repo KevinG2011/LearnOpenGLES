@@ -80,7 +80,7 @@
 }
 
 - (void)render {
-    glClearColor(0, 0.0, 0, 1.0);
+    glClearColor(0, 0, 0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     
     CGFloat scale = [[UIScreen mainScreen] scale];
@@ -135,7 +135,7 @@
         0.5f, -0.5f, 0.0f,      1.0f, 1.0f, 1.0f, //右下
         0.0f, 0.0f, 1.0f,      0.0f, 1.0f, 0.0f, //顶点
     };
-    glBindBuffer(GL_ARRAY_BUFFER, _myVertices);
+//    glBindBuffer(GL_ARRAY_BUFFER, _myVertices);
     glBufferData(GL_ARRAY_BUFFER, sizeof(attrArr), attrArr, GL_DYNAMIC_DRAW);
     glBindBuffer(GL_ARRAY_BUFFER, _myVertices);
     
@@ -158,7 +158,7 @@
     ksMatrixLoadIdentity(&_projectionMatrix);
     float aspect = width / height; //长宽比
     
-    
+    //结果矩阵, 视角,宽高比,近平面,远平面
     ksPerspective(&_projectionMatrix, 30.0, aspect, 5.0f, 20.0f); //透视变换，视角30°
     
     //设置glsl里面的投影矩阵

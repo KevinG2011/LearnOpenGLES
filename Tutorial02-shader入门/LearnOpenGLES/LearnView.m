@@ -175,8 +175,9 @@
     self.myEagLayer.opaque = YES;
     
     // 设置描绘属性，在这里设置不维持渲染内容以及颜色格式为 RGBA8
-    self.myEagLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];    
+    self.myEagLayer.drawableProperties = @{kEAGLDrawablePropertyRetainedBacking: @(0),
+                                           kEAGLDrawablePropertyColorFormat:kEAGLColorFormatRGBA8
+                                           }; 
 }
 
 
